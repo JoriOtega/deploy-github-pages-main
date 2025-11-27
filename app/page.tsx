@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { basePath } from "@/lib/basePath";
 
 export default function Home() {
   return (
@@ -36,7 +37,7 @@ export default function Home() {
 
 {/*OPTION 3 (recommended) — Use Next.js <Image> with unoptimized mode*/}
 <Image
-  src="/assets/skills_supporting_image.jpg"
+  src={`${basePath}/assets/skills_supporting_image.jpg`}
   alt="skills"
   width={300}
   height={300}
