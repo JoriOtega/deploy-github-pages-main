@@ -1,8 +1,14 @@
-import type { NextConfig } from 'next';
+import type { NextConfig } from "next";
+
+const isProd = process.env.NODE_ENV === "production";
 
 const nextConfig: NextConfig = {
-  output: 'export',
-  basePath: process.env.PAGES_BASE_PATH,
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
+  basePath: isProd ? "/deploy-github-pages-main" : "",
+  assetPrefix: isProd ? "/deploy-github-pages-main/" : "",
 };
 
 export default nextConfig;
